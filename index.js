@@ -12,12 +12,15 @@ document.getElementById("submitBtn").addEventListener("click", function() {
 
       
     // Generate the lifts
+    const liftRow = document.createElement("div");
+    liftRow.className = "lift-container";
     for (let i = 1; i <= numLifts; i++) {
       const lift = document.createElement("div");
       lift.className = "lift";
       lift.innerText = "Lift " + i;
-      liftContainer.appendChild(lift);
+      liftRow.appendChild(lift);
     }
+    liftContainer.appendChild(liftRow);
       
     // Generate the floors
     for (let j = numFloors; j >= 1; j--) {
