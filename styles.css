@@ -24,14 +24,17 @@ button {
 #liftContainer {
     margin-top: 20px;
     padding: 10px;
+
 }
 
 .lift {
+    display: flex;
     position: absolute;
     height: 100px;
+    width:50px;
     background-color: navy;
     overflow: hidden;
-    z-index: 100;
+    z-index: 1;
 }
 
 .floor {

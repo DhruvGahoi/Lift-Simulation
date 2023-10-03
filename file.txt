@@ -1,0 +1,14 @@
+
+let liftCount = 0
+let liftRow = document.createElement("div");
+liftRow.className = "lift-container";
+function generateLift(numOfLifts){
+    for(let i = 0; i<numOfLifts; i++){
+        const element = document.createElement("div")
+        liftCount++;
+        element.classname = "lift"
+        liftRow.appendChild(element);
+        element.style.left = `${liftCount*100}px`
+    }
+}
+generateLift(numLifts)
