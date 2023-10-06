@@ -1,5 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+
+
+:root {
+    --font-family: 'Gabarito', cursive;
+    --primary-color: #157eee;
+    --primary-color-dark: #01458d;
+    --border-color: #cacaca;
+    --border-color-dark: #2b2828;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+    --background-color: #ffffff;
+  }
+
+
+
 body {
-    font-family: Arial, sans-serif;
+   
     margin: 20px;
 }
   
@@ -12,14 +28,31 @@ label {
     margin-top: 10px;
 }
   
-input[type="number"] {
-    width: 50px;
+input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    width: 100%;
+    font-family: var(--font-family);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
 }
   
 button {
-    display: block;
-    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-family: var(--font-family);
 }
+
+.button-submit::hover {
+    background-color: var(--primary-color-dark);
+  }
   
 #liftContainer {
     margin-top: 20px;
@@ -27,7 +60,7 @@ button {
 
 }
 
-.lift {
+/* .lift {
     display: flex;
     position: absolute;
     height: 100px;
@@ -35,14 +68,48 @@ button {
     background-color: navy;
     overflow: hidden;
     z-index: 1;
-}
+} */
 
-.floor {
+/* .floor {
     width: 100%;
     height: 100px;
     background-color: yellowgreen;
     margin: 10px 0.5%;
     position: relative;
     z-index: -1;
+} */
+
+.floor-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    padding-inline: 12px;
+    background-color: var(--background-color);
+    border: 2px solid black;
 }
 
+/* .lifts {
+    display: flex;
+    flex: 1;
+    justify-content: space-evenly;
+  } */
+
+.lift {
+    justify-content: space-evenly;
+    display: flex;
+    width: 50px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    border: 2px solid black;
+  }
+
+.left-door,
+.right-door {
+  border: 2px solid black;
+  width: 50%;
+  height: 100%;
+  background-color: var(--primary-color);
+
+}
