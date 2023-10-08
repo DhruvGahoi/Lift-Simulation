@@ -35,10 +35,14 @@ submitBtn.addEventListener('click',()=>{
     let floorButtonUp = document.createElement("button");
     floorButtonUp.classList.add("button-up");
     floorButtonUp.setAttribute("id", `buttonUp-${floor}`);
+    floorButtonUp.innerText = "UP"
+    container.appendChild(floorButtonUp);
 
     let floorButtonDown = document.createElement("button");
     floorButtonDown.classList.add("button-down");
     floorButtonDown.setAttribute("id", `buttonDown-${floor}`);
+    floorButtonDown.innerText = "DOWN"
+    container.appendChild(floorButtonDown);
   }
 
 

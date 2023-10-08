@@ -4,11 +4,10 @@
 
 :root {
     --font-family: 'Gabarito', cursive;
-    --primary-color: #157eee;
-    --primary-color-dark: #01458d;
+    --primary-color: #01458d;
+    --secondary-color: #157eee;
     --border-color: #cacaca;
     --border-color-dark: #2b2828;
-    --box-shadow-color: rgba(0, 0, 0, 0.1);
     --background-color: #ffffff;
   }
 
@@ -50,15 +49,6 @@ button {
     font-family: var(--font-family);
 }
 
-.button-submit::hover {
-    background-color: var(--primary-color-dark);
-  }
-  
-#liftContainer {
-    margin-top: 20px;
-    padding: 10px;
-
-}
 
 /* .lift {
     display: flex;
@@ -110,6 +100,16 @@ button {
   border: 2px solid black;
   width: 50%;
   height: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 
 }
+
+.button-up,
+.button-down {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
