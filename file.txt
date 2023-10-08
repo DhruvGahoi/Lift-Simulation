@@ -1,0 +1,5 @@
+If I had to move a lift up but at the same time a user calls it down 
+so lift must contains some property until it is free .
+After reaching the desired floor its status should be updated 
+and now it have to move to another called place.
+
