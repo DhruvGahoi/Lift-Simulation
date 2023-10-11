@@ -40,11 +40,19 @@ submitBtn.addEventListener('click',()=>{
     floorButtonUp.innerText = "UP"
     floorContainer.appendChild(floorButtonUp);
 
+    floorButtonUp.addEventListener('click',()=>{
+      moveLift(floor)
+    })
+
     let floorButtonDown = document.createElement("button");
     floorButtonDown.classList.add("button-down");
     floorButtonDown.setAttribute("id", `buttonDown-${floor}`);
     floorButtonDown.innerText = "DOWN"
     floorContainer.appendChild(floorButtonDown);
+
+    floorButtonDown.addEventListener('click',()=>{
+      moveLift(floor);
+    })
   }
 
   let firstFloor = document.querySelector("#floor1");
@@ -72,37 +80,36 @@ submitBtn.addEventListener('click',()=>{
  }
 })
 
-// function openDoors(){
 
-//   let leftDoor = document.querySelector(".left-door");
-//   let rightDoor = document.querySelector(".right-door");
 
-//   leftDoor.computedStyleMap.transform = "translateX()"
-//   rightDoor.computedStyleMap.transform = "translateX()"
+function openDoors(){
 
-// }
+  let leftDoor = document.querySelector(".left-door");
+  let rightDoor = document.querySelector(".right-door");
 
-// function closeDoors(){
+  leftDoor.style.transform = "translateX(-100%)"
+  rightDoor.style.transform = "translateX(100%)"
 
-//   let leftDoor = document.querySelector(".left-door");
-//   let rightDoor = document.querySelector(".right-door");
+}
 
-//   leftDoor.computedStyleMap.transform = "translateX()"
-//   rightDoor.computedStyleMap.transform = "translateX()"
+function closeDoors(){
 
-// }
+  let leftDoor = document.querySelector(".left-door");
+  let rightDoor = document.querySelector(".right-door");
+
+  leftDoor.style.transform = "translateX(0px)"
+  rightDoor.style.transform = "translateX(0px)"
+
+}
+
+
 
 //To move the lift
-// function moveLift() {
+function moveLift(floor) {  
+  console.log(floor)
 
-//   //First check whether the lift is free or not
-
-//   liftContainer.style.transform = `translateY()`;
-
-// }
-
-//check the availability of lift
+  liftContainer.style.transition = 'all 10ms ease-in-out';
+  liftContainer.style.transform = `translateY(${(floor - 1) * 130}px)`;
 
 
-
-
+}
