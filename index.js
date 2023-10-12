@@ -1,7 +1,7 @@
 const submitBtn = document.getElementById('submitBtn');
 const header = document.getElementById('header');
 
-let lift = [];
+let lifts = [];
 
 const validInput =(numFloors,numLifts)=>{
 if(numLifts > numFloors){
@@ -51,6 +51,8 @@ submitBtn.addEventListener('click',()=>{
     floorContainer.appendChild(floorButtonDown);
 
     floorButtonDown.addEventListener('click',()=>{
+      console.log(floor);
+      console.log(liftContainer);
       moveLift(floor);
     })
   }
@@ -74,42 +76,50 @@ submitBtn.addEventListener('click',()=>{
     liftContainer.appendChild(rightDoor);
 
     firstFloor.appendChild(liftContainer);
+
+    lifts.push({
+      element: liftContainer,
+      currentFloor: 1
+  });
   }
 
  header.innerHTML=" ";
  }
 })
 
-
-
-function openDoors(){
-
-  let leftDoor = document.querySelector(".left-door");
-  let rightDoor = document.querySelector(".right-door");
-
-  leftDoor.style.transform = "translateX(-100%)"
-  rightDoor.style.transform = "translateX(100%)"
-
-}
-
-function closeDoors(){
-
-  let leftDoor = document.querySelector(".left-door");
-  let rightDoor = document.querySelector(".right-door");
-
-  leftDoor.style.transform = "translateX(0px)"
-  rightDoor.style.transform = "translateX(0px)"
-
-}
+// To move the lift
+// function moveLift(floor) {
+//   lifts.forEach((lift, index) => {
+//       setTimeout(() => {
+//           const liftContainer = lift.element;
+//           const currentFloor = lift.currentFloor;
+//           liftContainer.style.transition = "all 10ms ease-in-out";
+//           liftContainer.style.transform = `translateY(${(floor - currentFloor) * 100}px)`;
+//           lift.currentFloor = floor;
+//       }, index * 500);
+//     }
+// }
 
 
 
-//To move the lift
-function moveLift(floor) {  
-  console.log(floor)
+// function openDoors(){
 
-  liftContainer.style.transition = 'all 10ms ease-in-out';
-  liftContainer.style.transform = `translateY(${(floor - 1) * 130}px)`;
+//   let leftDoor = document.querySelector(".left-door");
+//   let rightDoor = document.querySelector(".right-door");
+
+//   leftDoor.style.transform = "translateX(-100%)"
+//   rightDoor.style.transform = "translateX(100%)"
+
+// }
+
+// function closeDoors(){
+
+//   let leftDoor = document.querySelector(".left-door");
+//   let rightDoor = document.querySelector(".right-door");
+
+//   leftDoor.style.transform = "translateX(0px)"
+//   rightDoor.style.transform = "translateX(0px)"
+
+// }
 
 
-}

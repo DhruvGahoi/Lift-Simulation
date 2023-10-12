@@ -3,3 +3,23 @@ so lift must contains some property until it is free .
 After reaching the desired floor its status should be updated 
 and now it have to move to another called place.
 
+// logic for storing values
+/**
+ *  busy attribute on lift
+lift.busy = false;
+ * get attribute to check if lift is busy
+ * 
+ * on calling htis function have a for loop .lift
+ * get all the lift by this class
+ * .querySelectorAll(.lifts)
+ * for(loop) -> with these lifts
+ * check if lift has the attribute
+ * 
+ * if lift doesn't have the attriubte move the lift after adding busy attribute 
+ * if lift has the attribute: check for other one
+ * keep checking until the all the lifts are done to be checked ( for loop ending basic)
+ *  maintain a array of targetFloors
+ * if no lifts are found push to that array
+ * once a lift reaches a floor check for this array and if there is anything in the array move the lift to that floor
+ * 
+ */
