@@ -2,8 +2,8 @@
 
 :root {
   --font-family: 'Gabarito', cursive;
-  --primary-color: #01458d;
-  --secondary-color: #157eee;
+  --primary-color: #2030df;
+  --secondary-color: #1277e3;
   --border-color: #cacaca;
   --border-color-dark: #2b2828;
   --background-color: #ffffff;
@@ -54,14 +54,43 @@ button {
   border: 2px solid black;
 }
 
-.lift {
+.lifts {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
+
+/* .lift {
   justify-content: space-evenly;
   display: flex;
-  width: 50px;
+  width: 80px;
+  height: 100px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.left-door,
+.right-door {
+  border: 2px solid black;
+  width: 150%;
+  height: 220%;
+  background-color: var(--secondary-color);
+
+}
+
+
+.lifts {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+} */
+
+.lift {
+  display: flex;
+  width: 80px;
   height: 100px;
   overflow: hidden;
   position: relative;
-  justify-content: space-around;
   border: 2px solid black;
 }
 
@@ -70,7 +99,7 @@ button {
   border: 2px solid black;
   width: 50%;
   height: 100%;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 
 }
 

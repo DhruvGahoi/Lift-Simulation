@@ -30,7 +30,7 @@ submitBtn.addEventListener('click',()=>{
   for (let floor = numFloors; floor >= 1; floor--) {
     let floorContainer = document.createElement("div");
     floorContainer.classList.add("floor-container");
-    floorContainer.innerText = "Floor " + floor;
+    // floorContainer.innerText = "Floor " + floor;
     floorContainer.setAttribute("id", `floor${floor}`);
     container.appendChild(floorContainer);
 
@@ -51,19 +51,18 @@ submitBtn.addEventListener('click',()=>{
     floorContainer.appendChild(floorButtonDown);
 
     floorButtonDown.addEventListener('click',()=>{
-      console.log(floor);
-      console.log(liftContainer);
       moveLift(floor);
     })
   }
 
   let firstFloor = document.querySelector("#floor1");
+  let liftsContainer = document.createElement("div");
+  liftsContainer.classList.add("lifts");
 
   for (let lift = 1; lift <= numLifts; lift++) {
     let liftContainer = document.createElement("div");
     liftContainer.className = "lift";
     liftContainer.classList.add("lift-container");
-    liftContainer.innerText = "Lift " + lift;
     liftContainer.setAttribute("id", `lift${lift}`);
 
     let leftDoor = document.createElement("div");
@@ -75,51 +74,68 @@ submitBtn.addEventListener('click',()=>{
     liftContainer.appendChild(leftDoor);
     liftContainer.appendChild(rightDoor);
 
-    firstFloor.appendChild(liftContainer);
+    liftsContainer.appendChild(liftContainer);
 
     lifts.push({
       element: liftContainer,
       currentFloor: 1
   });
   }
+  firstFloor.appendChild(liftsContainer);
 
  header.innerHTML=" ";
  }
+ 
 })
 
-// To move the lift
-// function moveLift(floor) {
-//   lifts.forEach((lift, index) => {
-//       setTimeout(() => {
-//           const liftContainer = lift.element;
-//           const currentFloor = lift.currentFloor;
-//           liftContainer.style.transition = "all 10ms ease-in-out";
-//           liftContainer.style.transform = `translateY(${(floor - currentFloor) * 100}px)`;
-//           lift.currentFloor = floor;
-//       }, index * 500);
-//     }
-// }
 
 
 
-// function openDoors(){
 
-//   let leftDoor = document.querySelector(".left-door");
-//   let rightDoor = document.querySelector(".right-door");
+function moveLift(floor) {
 
-//   leftDoor.style.transform = "translateX(-100%)"
-//   rightDoor.style.transform = "translateX(100%)"
+  const lifts = document.querySelectorAll(".lift")
 
-// }
+  let time = 2500
+  const elevator = lifts[0];
+  const currentFloor = document.getElementById("")
+  console.log(currentFloor)
+  elevator.style.transition = `all ${time}ms ease-in-out`;
+  elevator.style.transform = `translateY(${-Math.abs(
+    (floor - currentFloor -1) * 130)}px)`;
+  lift.currentFloor = floor;
+  // elevator.classList("busy")
 
-// function closeDoors(){
+  setTimeout(()=>{
+    openDoors(lift);
+    setTimeout(()=>{
+      closeDoors(lift)
+    },2500);
+  },2500 + time);
 
-//   let leftDoor = document.querySelector(".left-door");
-//   let rightDoor = document.querySelector(".right-door");
 
-//   leftDoor.style.transform = "translateX(0px)"
-//   rightDoor.style.transform = "translateX(0px)"
+}
 
-// }
+function openDoors(lift) {
+  let liftContainer = document.querySelector(`#lift-${lift.id}`);
+  let leftDoor = liftContainer.querySelector(".left-door");
+  let rightDoor = liftContainer.querySelector(".right-door");
+
+  leftDoor.style.transform = "translateX(-100%)";
+  rightDoor.style.transform = "translateX(100%)";
+}
+
+function closeDoors(lift) {
+  let liftContainer = document.querySelector(`#lift-${lift.id}`);
+  let leftDoor = liftContainer.querySelector(".left-door");
+  let rightDoor = liftContainer.querySelector(".right-door");
+
+  leftDoor.style.transform = "translateX(0)";
+  rightDoor.style.transform = "translateX(0)";
+}
+
+
+
+
 
 

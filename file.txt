@@ -23,3 +23,31 @@ lift.busy = false;
  * once a lift reaches a floor check for this array and if there is anything in the array move the lift to that floor
  * 
  */
+
+
+
+ // function useLift(targetFloor) {
+//   const elevators = document.querySelectorAll(".elevator")
+//   let pos;
+//   for(let i = 0; i < elevators.length; i++) {
+//       if(elevators[i].classList.contains("busy")) {
+//           if(elevators[i].getAttribute("onfloor") === targetFloor) {
+//               return;
+//           }
+//           console.log("check next")
+//       } else {
+//           for(let i = 0; i < elevators.length; i++) {
+//               if(elevators[i].getAttribute("onfloor") === targetFloor) {
+//                   move(targetFloor,i)
+//                   return
+//               }
+//           }
+//           pos = i
+//           move(targetFloor, pos)
+//           break;
+//       }
+//   }
+//   if(pos === undefined) {
+//       targetFloors.push(targetFloor)
+//   }
+// }
