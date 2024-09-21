@@ -51,3 +51,57 @@ lift.busy = false;
 //       targetFloors.push(targetFloor)
 //   }
 // }
+
+
+// setTimeout(()=>{
+    //   openDoors(lift);
+    //   setTimeout(()=>{
+    //     closeDoors(lift)
+    //   },2500);
+    // },2500 + time);
+
+
+    class Lift {
+        constructor(id, currentFloor, destinationFloor, busy) {
+          this.id = id;
+          this.currentFloor = currentFloor;
+          this.destinationFloor = destinationFloor;
+          this.busy = busy;
+        }
+        move() {
+          if (this.currentFloor !== this.destinationFloor) {
+            if (this.currentFloor < this.destinationFloor) {
+              this.currentFloor++;
+            } else {
+              this.currentFloor--;
+            }
+          }
+        }
+        isBusy() {
+          return this.busy;
+        }
+        setBusy(busy) {
+          this.busy = busy;
+        }
+      }
+      function checkAvailability(lifts, floor) {
+        for (let lift of lifts) {
+          if (lift.currentFloor === floor && !lift.busy) {
+            return lift;
+          }
+        }
+        return null;
+      }
+
+const targetFloor = []
+const lifts = document.querySelectorAll(".lift")
+for(let i = 0; i<lifts.length-1){
+    const isBusy = lifts[i].getAttribute("busy")
+    if (isBusy){
+        if (index === lifts.length-1){
+            targetFloor.push(floor)
+        }
+    }
+    else moveLift(i)
+}
+
