@@ -33,25 +33,33 @@ submitBtn.addEventListener('click', () => {
       floorContainer.setAttribute("id", `floor${floor}`);
       container.appendChild(floorContainer);
 
-      let floorButtonUp = document.createElement("button");
-      floorButtonUp.classList.add("button-up");
-      floorButtonUp.setAttribute("id", `buttonUp-${floor}`);
-      floorButtonUp.innerText = "UP";
-      floorContainer.appendChild(floorButtonUp);
+      let buttonContainer = document.createElement("div");
+      buttonContainer.classList.add("button-container");
+      floorContainer.appendChild(buttonContainer);
 
-      floorButtonUp.addEventListener('click', () => {
-        requestLift(floor);
-      });
+      if (floor !== numFloors) {
+        let floorButtonUp = document.createElement("button");
+        floorButtonUp.classList.add("button-up");
+        floorButtonUp.setAttribute("id", `buttonUp-${floor}`);
+        floorButtonUp.innerText = "UP";
+        buttonContainer.appendChild(floorButtonUp);
 
-      let floorButtonDown = document.createElement("button");
-      floorButtonDown.classList.add("button-down");
-      floorButtonDown.setAttribute("id", `buttonDown-${floor}`);
-      floorButtonDown.innerText = "DOWN";
-      floorContainer.appendChild(floorButtonDown);
+        floorButtonUp.addEventListener('click', () => {
+          requestLift(floor);
+        });
+      }
 
-      floorButtonDown.addEventListener('click', () => {
-        requestLift(floor);
-      });
+      if (floor !== 1) {
+        let floorButtonDown = document.createElement("button");
+        floorButtonDown.classList.add("button-down");
+        floorButtonDown.setAttribute("id", `buttonDown-${floor}`);
+        floorButtonDown.innerText = "DOWN";
+        buttonContainer.appendChild(floorButtonDown);
+
+        floorButtonDown.addEventListener('click', () => {
+          requestLift(floor); 
+        });
+      }
     }
 
     let firstFloor = document.querySelector("#floor1");
